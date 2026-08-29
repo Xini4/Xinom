@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.xini4.pvptools.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ParticleManagerMixin",
+    "EndCrystalEntityRendererMixin",
+    "SoundEngineMixin",
+    "GameRendererHurtMixin"
+  ]
+}

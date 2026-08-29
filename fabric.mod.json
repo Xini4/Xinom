@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "xinom",
+  "version": "1.0.0",
+  "name": "Xinom PvP Tools",
+  "description": "PvP & QoL helper: Totem overlay, Crystal optimizer, Anti-fire/lava, Shield status, No hurt cam. Client-side.",
+  "authors": ["Xini4"],
+  "license": "MIT",
+  "icon": "assets/xinom/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.xini4.pvptools.PvPToolsClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "fabric": "*",
+    "cloth-config": "*",
+    "modmenu": "*"
+  },
+  "mixins": [
+    "xinom.mixins.json"
+  ],
+  "custom": { "modmenu:client": true }
+}

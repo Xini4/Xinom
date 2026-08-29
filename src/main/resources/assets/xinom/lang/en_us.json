@@ -1,0 +1,11 @@
+{
+  "mod.xinom.name": "Xinom PvP Tools",
+  "config.xinom.title": "Xinom: settings",
+  "config.xinom.category.totem": "Totem Overlay",
+  "config.xinom.totem.enable": "Enable Totem Overlay",
+  "config.xinom.totem.opacity": "Overlay opacity (%)",
+  "config.xinom.totem.color": "Overlay color (#AARRGGBB)",
+  "key.xinom.toggle_totem": "Toggle Totem Overlay",
+  "key.xinom.open_config": "Open Xinom config",
+  "category.xinom": "Xinom"
+}

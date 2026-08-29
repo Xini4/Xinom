@@ -1,0 +1,11 @@
+{
+  "mod.xinom.name": "Xinom PvP Tools",
+  "config.xinom.title": "Xinom: настройки",
+  "config.xinom.category.totem": "Оверлей тотема",
+  "config.xinom.totem.enable": "Включить оверлей тотема",
+  "config.xinom.totem.opacity": "Непрозрачность оверлея (%)",
+  "config.xinom.totem.color": "Цвет оверлея (#AARRGGBB)",
+  "key.xinom.toggle_totem": "Переключить оверлей тотема",
+  "key.xinom.open_config": "Открыть настройки Xinom",
+  "category.xinom": "Xinom"
+}
