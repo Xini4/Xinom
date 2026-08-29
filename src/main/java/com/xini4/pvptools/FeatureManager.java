@@ -1,7 +1,7 @@
 package com.xini4.pvptools;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.gui.DrawContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +24,10 @@ public class FeatureManager {
         }
     }
 
-    public void onHudRender(MinecraftClient client, MatrixStack matrices, float tickDelta) {
+    public void onHudRender(MinecraftClient client, DrawContext drawContext, float tickDelta) {
         for (Feature f : features) {
             try {
-                f.onHudRender(client, matrices, tickDelta);
+                f.onHudRender(client, drawContext, tickDelta);
             } catch (Throwable t) {
                 t.printStackTrace();
             }

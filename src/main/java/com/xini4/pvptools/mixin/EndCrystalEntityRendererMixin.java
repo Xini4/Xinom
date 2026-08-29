@@ -5,7 +5,6 @@ import com.xini4.pvptools.config.PvPToolsConfig;
 import com.xini4.pvptools.optimizer.Optimizer;
 import net.minecraft.client.render.entity.EndCrystalEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
@@ -15,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EndCrystalEntityRenderer.class)
-public abstract class EndCrystalEntityRendererMixin extends EntityRenderer<EndCrystalEntity> {
+public abstract class EndCrystalEntityRendererMixin extends EndCrystalEntityRenderer {
     protected EndCrystalEntityRendererMixin(EntityRendererFactory.Context ctx) { super(ctx); }
 
     @Inject(method = "render(Lnet/minecraft/entity/decoration/EndCrystalEntity;FFLcom/mojang/blaze3d/vertex/VertexConsumerProvider;Lnet/minecraft/client/util/math/MatrixStack;I)V",

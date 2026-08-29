@@ -1,10 +1,11 @@
-package com.xini4.pvptools.features;
+package com.xini4.pvptools/features;
 
 import com.xini4.pvptools.PvPToolsClient;
 import com.xini4.pvptools.Feature;
 import com.xini4.pvptools.config.PvPToolsConfig;
 import com.xini4.pvptools.optimizer.Optimizer;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
 
 public class CrystalOptimizerFeature implements Feature {
     private final PvPToolsConfig cfg = PvPToolsClient.CONFIG.config;
@@ -17,6 +18,6 @@ public class CrystalOptimizerFeature implements Feature {
 
     @Override
     public void clientTick(MinecraftClient client) {
-        // минимальная логика
+        // минимальная логика — обработка выполняется в mixin'е при рендере
     }
 }

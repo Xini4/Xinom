@@ -6,7 +6,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
 
 public class Optimizer {
     private final MinecraftClient client = MinecraftClient.getInstance();
@@ -18,7 +17,9 @@ public class Optimizer {
         if (mode == 2) return true;
 
         if (mode == 3) {
-            double distance = client.player.getPos().distanceTo(crystal.getPos());
+            Vec3d playerPos = new Vec3d(client.player.getX(), client.player.getY(), client.player.getZ());
+            Vec3d crystalPos = new Vec3d(crystal.getX(), crystal.getY(), crystal.getZ());
+            double distance = playerPos.distanceTo(crystalPos);
             if (distance > optimizeDistance) return true;
 
             BlockPos below = new BlockPos(crystal.getBlockX(), crystal.getBlockY() - 1, crystal.getBlockZ());
@@ -26,7 +27,7 @@ public class Optimizer {
             boolean validBase = isObsidianOrBedrock(bs);
             if (!validBase && distance > Math.min(optimizeDistance, 8.0)) return true;
 
-            if (!Raycast.rayTraceVisible(client.player, new Vec3d(crystal.getX(), crystal.getY(), crystal.getZ()), client.world) && distance > 10.0) {
+            if (!Raycast.rayTraceVisible(client.player, crystalPos, client.world) && distance > 10.0) {
                 return true;
             }
         }

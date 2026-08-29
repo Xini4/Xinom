@@ -2,7 +2,6 @@ package com.xini4.pvptools;
 
 import com.xini4.pvptools.config.ConfigManager;
 import com.xini4.pvptools.features.*;
-import com.xini4.pvptools.input.Keybinds;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
@@ -17,9 +16,9 @@ public class PvPToolsClient implements ClientModInitializer {
     public void onInitializeClient() {
         CONFIG.load();
         registerFeatures();
-        Keybinds.register();
+        // Keybinds removed to avoid mapping compatibility issues; can be added later per target mappings
         ClientTickEvents.END_CLIENT_TICK.register(client -> FEATURES.clientTick(client));
-        HudRenderCallback.EVENT.register((matrices, tickDelta) -> FEATURES.onHudRender(MinecraftClient.getInstance(), matrices, tickDelta));
+        HudRenderCallback.EVENT.register((drawContext, tickDelta) -> FEATURES.onHudRender(MinecraftClient.getInstance(), drawContext, tickDelta));
     }
 
     private void registerFeatures() {
